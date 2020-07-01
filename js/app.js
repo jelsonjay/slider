@@ -1,7 +1,7 @@
 let pictures = [];
 let slider;
-let atualPicture;
-let todasPictures;
+let firstPicture;
+let maxPictures;
 let intervalo;
 let tempo;
 
@@ -20,22 +20,22 @@ function loadPicture(img) {
 }
 
 // load pictures
-function iniciar() {
+function startSlider() {
 	getSlider();
-	atualPicture = 0;
-	todasPictures = pictures.length - 1;
-	slider = document.getElementById('picture');
-	loadPicture(atualPicture);
+	firstPicture = 0;
+	maxPictures = pictures.length - 1;
+	slider = document.querySelector('#picture');
+	loadPicture(firstPicture);
 	tempo = 2000;
 	intervalo = setInterval(moverPicture, tempo);
 }
 
 function moverPicture() {
-	atualPicture++;
-	if (atualPicture > todasPictures) {
-		atualPicture = 0;
+	firstPicture++;
+	if (firstPicture > maxPictures) {
+		firstPicture = 0;
 	}
-	loadPicture(atualPicture);
+	loadPicture(firstPicture);
 }
 
-window.addEventListener('load', iniciar);
+window.addEventListener('load', startSlider);
