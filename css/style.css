@@ -16,6 +16,10 @@ body {
 
 #wrapper {
     max-width: 800px;
+    display: flex;
+    justify-content: center;
     margin: 0 auto;
+    padding: 40px;
+
 
 }
