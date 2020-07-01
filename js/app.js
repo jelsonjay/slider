@@ -1,4 +1,5 @@
-let pictures = [];
+'use strict';
+const pictures = [];
 let slider;
 let firstPicture;
 let maxPictures;
@@ -15,6 +16,7 @@ function getSlider() {
 	}
 }
 
+// load image
 function loadPicture(img) {
 	slider.style.backgroundImage = "url('" + pictures[img].src + "')";
 }
@@ -30,6 +32,7 @@ function startSlider() {
 	time = setInterval(changePicture, timeChange);
 }
 
+// change image
 function changePicture() {
 	firstPicture++;
 	if (firstPicture > maxPictures) {
