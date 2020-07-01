@@ -2,8 +2,8 @@ let pictures = [];
 let slider;
 let firstPicture;
 let maxPictures;
-let intervalo;
-let tempo;
+let time;
+let timeChange;
 
 // get all images
 function getSlider() {
@@ -26,11 +26,11 @@ function startSlider() {
 	maxPictures = pictures.length - 1;
 	slider = document.querySelector('#picture');
 	loadPicture(firstPicture);
-	tempo = 2000;
-	intervalo = setInterval(moverPicture, tempo);
+	timeChange = 2000;
+	time = setInterval(changePicture, timeChange);
 }
 
-function moverPicture() {
+function changePicture() {
 	firstPicture++;
 	if (firstPicture > maxPictures) {
 		firstPicture = 0;
