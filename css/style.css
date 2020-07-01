@@ -13,11 +13,16 @@ body {
 	height: 400px;
 	border: 8px solid orange;
 }
+h1 {
+	text-align: center;
+	color: #fff;
+	padding: 15px;
+}
 
 #wrapper {
 	max-width: 1000px;
 	display: flex;
 	justify-content: center;
 	margin: 0 auto;
-	padding: 40px;
+	padding: 30px;
 }
