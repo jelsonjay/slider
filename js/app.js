@@ -1,29 +1,31 @@
-var pictures = [];
-var slider;
-var atualPicture;
-var todasPictures;
-var intervalo;
-var tempo;
+let pictures = [];
+let slider;
+let atualPicture;
+let todasPictures;
+let intervalo;
+let tempo;
 
-function preCaregamento() {
-	var p = 1;
-	for (var i = 0; i < 8; i++) {
+// get all images
+function getSlider() {
+	let p = 1;
+	for (let i = 0; i < 8; i++) {
 		pictures[i] = new Image();
 		pictures[i].src = 'img/' + p + '.jpg';
 		p++;
 	}
 }
 
-function caregarPicture(img) {
+function loadPicture(img) {
 	slider.style.backgroundImage = "url('" + pictures[img].src + "')";
 }
 
+// load pictures
 function iniciar() {
-	preCaregamento();
+	getSlider();
 	atualPicture = 0;
 	todasPictures = pictures.length - 1;
 	slider = document.getElementById('picture');
-	caregarPicture(atualPicture);
+	loadPicture(atualPicture);
 	tempo = 2000;
 	intervalo = setInterval(moverPicture, tempo);
 }
@@ -33,7 +35,7 @@ function moverPicture() {
 	if (atualPicture > todasPictures) {
 		atualPicture = 0;
 	}
-	caregarPicture(atualPicture);
+	loadPicture(atualPicture);
 }
 
 window.addEventListener('load', iniciar);
