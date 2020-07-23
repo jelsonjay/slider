@@ -1,6 +1,6 @@
 # Slider
 
-Simple micro-component slider using JavaScript
+Simple micro-component slider using HTML5, CSS3, JavaScript & ES6
 
 [Access My Project](https://jelsonjay.github.io/slider/)
 
